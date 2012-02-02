@@ -52,6 +52,7 @@
     </plugins>
   </build>
   <modules>
+    <module>test-war-policy</module>
     <!-- Used by jetty-webapp-logging -->
     <module>test-war-commons_logging_1.0.3</module>
     <module>test-war-commons_logging_1.1</module>
