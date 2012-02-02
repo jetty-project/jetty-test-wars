@@ -52,12 +52,6 @@
     </plugins>
   </build>
   <modules>
-    <!-- Original top level test webapps -->
-    <module>test-jndi-webapp</module>
-    <module>test-jaas-webapp</module>
-    <module>test-annotation-webapp</module>
-    <module>test-war-policy</module>
-    <module>test-war-dump</module>
     <!-- Used by jetty-webapp-logging -->
     <module>test-war-commons_logging_1.0.3</module>
     <module>test-war-commons_logging_1.1</module>
