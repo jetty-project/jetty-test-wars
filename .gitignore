@@ -9,6 +9,7 @@ target/
 *.orig
 *.versionsBackup
 release.properties
+*.releaseBackup
 
 # common junk
 *.log
