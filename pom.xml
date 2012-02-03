@@ -27,7 +27,7 @@
   <groupId>org.mortbay.jetty.testwars</groupId>
   <artifactId>testwars-parent</artifactId>
   <name>Jetty :: Test Wars Parent</name>
-  <version>9.0.0.v20120203</version>
+  <version>9.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <properties>
     <felix.bundle.version>2.0.0</felix.bundle.version>
