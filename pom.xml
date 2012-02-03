@@ -39,7 +39,7 @@
   </properties>
   <scm>
     <connection>scm:git:git://github.com/jetty-project/jetty-test-wars.git</connection>
-    <developerConnection>scm:git:git://github.com/jetty-project/jetty-test-wars.git</developerConnection>
+    <developerConnection>scm:git:git@github.com:jetty-project/jetty-test-wars.git</developerConnection>
     <url>http://github.com/jetty-project/jetty-test-wars</url>
   </scm>
   <build>
