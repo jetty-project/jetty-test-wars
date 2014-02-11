@@ -19,9 +19,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.mortbay.jetty</groupId>
+    <groupId>org.eclipse.jetty</groupId>
     <artifactId>jetty-parent</artifactId>
-    <version>13</version>
+    <version>21</version>
   </parent>
 
   <groupId>org.mortbay.jetty.testwars</groupId>
@@ -35,7 +35,7 @@
     <jsp-2-1-version>2.1.v20100127</jsp-2-1-version>
     <junit-version>3.8.2</junit-version>
     <junit4-version>4.8.1</junit4-version>
-    <jetty-test-helper-version>1.6</jetty-test-helper-version>
+    <jetty-test-helper-version>2.7</jetty-test-helper-version>
   </properties>
   <scm>
     <connection>scm:git:git@github.com:jetty-project/jetty-test-wars.git</connection>
@@ -78,6 +78,7 @@
     <module>test-war-slf4j_1.6.1</module>
     <module>test-war-slf4j_1.6.6</module>
     <module>test-war-slf4j_1.7.2</module>
+    <module>test-war-slf4j_1.7.5</module>
     <!-- Used by jetty-webapp-verifier -->
     <module>test-war-jruby</module>
     <module>test-war-jython</module>
