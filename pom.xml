@@ -137,6 +137,9 @@
     <module>test-war-servlet25</module>
     <module>test-war-servlet30</module>
     <module>test-war-servlet31</module>
+    <module>test-war-servlet40</module>
+    <module>test-war-servlet50</module>
+    <module>test-war-servlet60</module>
     <module>test-war-servletmixed1</module>
     <module>test-war-servletmixed2</module>
   </modules>
