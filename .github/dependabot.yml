@@ -2,8 +2,16 @@ version: 2
 updates:
   - package-ecosystem: "maven"
     directory: "/"
+    target-branch: "main"
     schedule:
       interval: "weekly"
+
+  - package-ecosystem: "maven"
+    directory: "/"
+    target-branch: "servlet4"
+    schedule:
+      interval: "weekly"
+
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:

@@ -26,7 +26,7 @@
   <artifactId>dummy-scm-lib</artifactId>
   <!-- POM is correct, we build up the jar manually below -->
   <packaging>pom</packaging>
-  <name>Jetty :: Verifier Tests :: Dummy SCM Lib</name>
+  <name>Jetty :: Test Wars :: Dummy SCM Lib</name>
   <build>
     <plugins>
       <plugin>
@@ -43,7 +43,7 @@
               <goal>run</goal>
             </goals>
             <configuration>
-              <tasks>
+              <target>
                 <property name="outdir" value="${project.build.directory}/generated-scm-resources" />
                 <mkdir dir="${outdir}/CVS" />
                 <touch file="${outdir}/.cvsignore" />
@@ -70,7 +70,7 @@
                      won't allow you to create JAR files with SCM content in it.
                   -->
                 <jar destfile="${project.build.directory}/${project.artifactId}-${project.version}.jar" basedir="${outdir}" includes="**/*" defaultexcludes="false" />
-              </tasks>
+              </target>
             </configuration>
           </execution>
         </executions>

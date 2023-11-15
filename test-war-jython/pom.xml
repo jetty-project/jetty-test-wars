@@ -7,7 +7,7 @@
   </parent>
   <artifactId>test-war-jython</artifactId>
   <packaging>war</packaging>
-  <name>Jetty :: Verifier Tests :: Jython Webapp</name>
+  <name>Jetty :: Test Wars :: Jython Webapp</name>
   <dependencies>
     <dependency>
       <groupId>org.python</groupId>
@@ -15,25 +15,4 @@
       <version>2.7.3</version>
     </dependency>
   </dependencies>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-            <configuration>
-              <descriptorRefs>
-                <descriptorRef>config</descriptorRef>
-              </descriptorRefs>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
 </project>

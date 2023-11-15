@@ -8,7 +8,7 @@
   <artifactId>test-war-scm</artifactId>
   <!-- POM is correct, we build up the war manually below -->
   <packaging>pom</packaging>
-  <name>Jetty :: Webapp Verifier :: Dummy SCM Webapp</name>
+  <name>Jetty :: Test Wars :: Dummy SCM Webapp</name>
   <dependencies>
     <dependency>
       <groupId>org.eclipse.jetty.demos.testwars</groupId>
@@ -35,7 +35,7 @@
               <goal>run</goal>
             </goals>
             <configuration>
-              <tasks>
+              <target>
                 <mkdir dir="${war_work_dir}/CVS" />
                 <touch file="${war_work_dir}/.cvsignore" />
                 <mkdir dir="${war_work_dir}/.svn" />
@@ -59,7 +59,7 @@
                   <fileset dir="${basedir}/src/main/webapp" />
                 </copy>
                 <mkdir dir="${war_work_dir}/WEB-INF/lib" />
-              </tasks>
+              </target>
             </configuration>
           </execution>
           <execution>
@@ -70,9 +70,9 @@
               <goal>run</goal>
             </goals>
             <configuration>
-              <tasks>
+              <target>
                 <jar destfile="${project.build.directory}/${project.artifactId}-${project.version}.war" basedir="${war_work_dir}" includes="**/*" defaultexcludes="false" />
-              </tasks>
+              </target>
             </configuration>
           </execution>
         </executions>
@@ -115,23 +115,6 @@
                   <type>war</type>
                 </artifact>
               </artifacts>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-            <configuration>
-              <descriptorRefs>
-                <descriptorRef>config</descriptorRef>
-              </descriptorRefs>
             </configuration>
           </execution>
         </executions>

@@ -7,26 +7,5 @@
   </parent>
   <artifactId>test-war-servlet23</artifactId>
   <packaging>war</packaging>
-  <name>Jetty :: Verifier Tests :: Servlet 2.3 Webapp</name>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-            <configuration>
-              <descriptorRefs>
-                <descriptorRef>config</descriptorRef>
-              </descriptorRefs>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
+  <name>Jetty :: Test Wars :: Servlet 2.3 Webapp</name>
 </project>

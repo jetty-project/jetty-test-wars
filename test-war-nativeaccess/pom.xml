@@ -8,26 +8,5 @@
   </parent>
   <artifactId>test-war-nativeaccess</artifactId>
   <packaging>war</packaging>
-  <name>Jetty :: Verifier Tests :: Native Access Webapp</name>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-assembly-plugin</artifactId>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>single</goal>
-            </goals>
-            <configuration>
-              <descriptorRefs>
-                <descriptorRef>config</descriptorRef>
-              </descriptorRefs>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
+  <name>Jetty :: Test Wars :: Native Access Webapp</name>
 </project>
