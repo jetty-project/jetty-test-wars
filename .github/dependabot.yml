@@ -4,21 +4,6 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-    ignored_updates:
-      - match:
-          dependency_name: "javax.servlet*"
-      - match:
-          dependency_name: "commons-logging*"
-      - match:
-          dependency_name: "org.codehaus.groovy*"
-      - match:
-          dependency_name: "org.jruby*"
-      - match:
-          dependency_name: "org.python*"
-      - match:
-          dependency_name: "log4j*"
-      - match:
-          dependency_name: "org.slf4j*"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
