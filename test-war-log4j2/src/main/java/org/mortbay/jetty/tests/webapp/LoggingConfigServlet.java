@@ -16,17 +16,15 @@
 
 package org.mortbay.jetty.tests.webapp;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.log4j.ConsoleAppender;
-import org.apache.log4j.Layout;
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PatternLayout;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.core.appender.ConsoleAppender;
+import org.apache.logging.log4j.core.layout.PatternLayout;
 
 /**
  * Servlet that tweaks the existing configuration.
@@ -34,23 +32,25 @@ import org.apache.log4j.PatternLayout;
 public class LoggingConfigServlet extends HttpServlet
 {
     private static final long serialVersionUID = 1L;
-    private Logger log = Logger.getLogger(LoggingConfigServlet.class);
+    private static final Logger LOG = LogManager.getLogger(LoggingConfigServlet.class);
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
     {
         // Attempt to reconfigure the level of the root logger
-        Logger root = Logger.getRootLogger();
-        root.setLevel(Level.WARN);
-        log.info("Set level to WARN");
-        log.warn("Set level to WARN");
+        Logger root = LogManager.getRootLogger();
+
+        org.apache.logging.log4j.core.Logger coreRoot = (org.apache.logging.log4j.core.Logger)root;
+        coreRoot.setLevel(Level.WARN);
+        LOG.info("Set level to WARN");
+        LOG.warn("Set level to WARN");
         
         // Attempt to add a new console appender
-        Layout layout = new PatternLayout("#CONFIGURED# %r [%t] %p %c %x - %m%n");
-        ConsoleAppender appender = new ConsoleAppender(layout);
-        log.addAppender(appender);
+        PatternLayout layout = PatternLayout.newBuilder().withPattern("#CONFIGURED# %r [%t] %p %c %x - %m%n").build();
+        ConsoleAppender appender = ConsoleAppender.newBuilder().setLayout(layout).build();
+        coreRoot.addAppender(appender);
 
-        log.info("Added ConsoleAppender");
-        log.warn("Added ConsoleAppender");
+        LOG.info("Added ConsoleAppender");
+        LOG.warn("Added ConsoleAppender");
     }
 }

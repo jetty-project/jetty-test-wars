@@ -18,12 +18,12 @@ package org.mortbay.jetty.tests.webapp;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Servlet implementation class LoggingServlet
@@ -31,31 +31,31 @@ import org.apache.log4j.Logger;
 public class LoggingServlet extends HttpServlet
 {
     private static final long serialVersionUID = 1L;
-    private Logger log = Logger.getLogger(LoggingServlet.class);
+    private static final Logger LOG = LogManager.getLogger(LoggingServlet.class);
 
     /**
      * @see HttpServlet#HttpServlet()
      */
     public LoggingServlet()
     {
-        log.debug("initialized");
+        LOG.debug("initialized");
     }
 
     /**
      * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-     *      response)
+     * response)
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
     {
-        log.info("GET requested");
+        LOG.info("GET requested");
 
-        log.warn("Slightly warn, with a chance of log events");
+        LOG.warn("Slightly warn, with a chance of log events");
 
-        log.error("Nothing is (intentionally) being output by this Servlet");
+        LOG.error("Nothing is (intentionally) being output by this Servlet");
 
         IOException severe = new FileNotFoundException("A file cannot be found");
 
-        log.fatal("Whoops (intentionally) causing a Throwable",severe);
+        LOG.fatal("Whoops (intentionally) causing a Throwable", severe);
     }
 }
