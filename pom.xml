@@ -124,6 +124,7 @@
     <module>test-war-log4j1</module>
     <module>test-war-log4j2</module>
     <module>test-war-slf4j</module>
+    <module>test-war-logback</module>
     <!-- Used to verify webapps -->
     <module>test-war-jruby</module>
     <module>test-war-jython</module>
